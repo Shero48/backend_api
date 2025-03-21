@@ -3,9 +3,9 @@ const schema=mongoose.Schema;
 
     const db = async () => {
         try {
-            await mongoose.connect('mongodb://localhost:27017/e_com', {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
+            await mongoose.connect('mongodb+srv://sunils:sunil@cluster0.qaaiy.mongodb.net/e_com?retryWrites=true&w=majority', {
+                serverSelectionTimeoutMS: 30000, // 30 seconds timeout
+                socketTimeoutMS: 45000,
             });
             console.log('✅ MongoDB Connected');
         } catch (err) {

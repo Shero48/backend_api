@@ -73,5 +73,8 @@ app.get('/images',async(req,res)=>{
         console.log(err);
     }
 })
-db();
-module.exports=app
+
+app.listen(3000,()=>{
+    db();
+    console.log("connected")
+})
