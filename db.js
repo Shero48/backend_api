@@ -1,13 +1,19 @@
 const mongoose=require('mongoose');
 const schema=mongoose.Schema;
 
-const db=async()=>{
-        await mongoose.connect('mongodb://localhost:27017/e_com').then(res=>{
-            console.log("db connected");
-        }).catch(err=>{
-            console.log("err occuered : ",err);
-        })
-}
+    const db = async () => {
+        try {
+            await mongoose.connect('mongodb://localhost:27017/e_com', {
+                useNewUrlParser: true,
+                useUnifiedTopology: true
+            });
+            console.log('✅ MongoDB Connected');
+        } catch (err) {
+            console.error('❌ MongoDB Connection Error:', err);
+            process.exit(1);
+        }
+    };
+    
 
 const model=new schema({
     tittle:{
