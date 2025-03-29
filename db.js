@@ -3,7 +3,7 @@ const schema=mongoose.Schema;
 
     const db = async () => {
         try {
-            await mongoose.connect('mongodb+srv://sunils:sunil@cluster0.qaaiy.mongodb.net/e_com?retryWrites=true&w=majority', {
+            await mongoose.connect('mongodb_url', {
                 serverSelectionTimeoutMS: 30000, // 30 seconds timeout
                 socketTimeoutMS: 45000,
             });
